@@ -95,15 +95,39 @@ python3 -m pip install -U jupyter-book
 _build/books/index.html
 ```
 
-## GitHub Pages
+## GitHub Pages - Jupyter Lite
 
-发布后的课程站点地址：
+发布后的课程站点地址（可在浏览器中直接运行代码）：
 
 ```text
 https://suibeai.github.io/python_book/
 ```
 
-本仓库使用 GitHub Actions 构建并部署 Pages。相关配置位于 `.github/workflows/pages.yml`，构建脚本为 `book_generate.sh`。
+本仓库使用 **Jupyter Lite** 构建 GitHub Pages，所有 Python 代码都可以在浏览器中直接运行，无需安装任何软件。
+
+### 在线使用
+
+访问 https://suibeai.github.io/python_book/ 即可：
+
+- 📖 浏览课程内容
+- 🚀 直接在浏览器中运行 Python 代码
+- ✏️ 修改代码并实验不同的写法
+- 📝 完成练习题
+
+### 本地构建 Jupyter Lite
+
+如果需要在本地构建 Jupyter Lite 版本：
+
+```bash
+python3 -m pip install -U jupyterlite jupyterlite-pyodide-kernel
+jupyter_lite build . --output-dir _build/jupyter-lite
+```
+
+然后在 `_build/jupyter-lite/index.html` 中打开。
+
+相关配置：
+- GitHub Actions 工作流：`.github/workflows/pages.yml`
+- Jupyter Lite 配置：`jupyter-lite.json`
 
 ## 代码下载
 

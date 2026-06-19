@@ -1,0 +1,19 @@
+{
+  "jupyter-lite-schema-version": 1,
+  "jupyter-config-data": {
+    "exposeAppInBrowser": true,
+    "appUrl": "./lab",
+    "settings": {
+      "classic": {
+        "page": "tree"
+      }
+    }
+  },
+  "jupyter-lite-data": {
+    "contents": [
+      {
+        "url": "./books"
+      }
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-name: Deploy Jupyter Book to GitHub Pages
+name: Deploy Jupyter Lite to GitHub Pages
 
 on:
   push:
@@ -27,23 +27,26 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Jupyter Book
-        run: python -m pip install -U jupyter-book
+      - name: Install Jupyter Lite
+        run: |
+          python -m pip install -U pip
+          python -m pip install -U jupyterlite jupyterlite-pyodide-kernel
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build book
-        env:
-          ANNBOOK_BOOK_TITLE: Python 教程 Notebook
-          ANNBOOK_BOOK_AUTHOR: SUIBE Python Book
-          BASE_URL: /python_book
-        run: ./book_generate.sh ./books ./_build/books directory
+      - name: Build Jupyter Lite
+        run: |
+          jupyter_lite build . --output-dir _build/jupyter-lite
+
+      - name: Clean up checkpoint files
+        run: |
+          find _build/jupyter-lite -type d -name ".ipynb_checkpoints" -exec rm -rf {} + || true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_build/books
+          path: ./_build/jupyter-lite
 
   deploy:
     environment:
