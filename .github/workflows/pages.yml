@@ -39,6 +39,11 @@ jobs:
         run: |
           jupyter_lite build . --output-dir _build/jupyter-lite
 
+      - name: Copy books to Jupyter Lite output
+        run: |
+          mkdir -p _build/jupyter-lite/notebooks
+          cp -r books _build/jupyter-lite/notebooks/
+
       - name: Clean up checkpoint files
         run: |
           find _build/jupyter-lite -type d -name ".ipynb_checkpoints" -exec rm -rf {} + || true
