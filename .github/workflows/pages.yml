@@ -41,8 +41,8 @@ jobs:
 
       - name: Copy books to Jupyter Lite output
         run: |
-          mkdir -p _build/jupyter-lite/notebooks
-          cp -r books/* _build/jupyter-lite/notebooks/
+          mkdir -p _build/jupyter-lite/tree
+          cp -r books/* _build/jupyter-lite/tree/
 
       - name: Clean up checkpoint files
         run: |
