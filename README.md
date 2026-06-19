@@ -86,20 +86,30 @@ http://localhost:8888
 
 ```bash
 python3 -m pip install -U jupyter-book
-jupyter-book build books
+./book_generate.sh ./books ./_build/books directory
 ```
 
 构建输出通常位于：
 
 ```text
-books/_build/html/index.html
+_build/books/index.html
 ```
 
-如果仓库中提供了构建脚本，也可以使用脚本统一生成站点，具体以脚本内容为准。
+## GitHub Pages
+
+发布后的课程站点地址：
+
+```text
+https://suibeai.github.io/python_book/
+```
+
+本仓库使用 GitHub Actions 构建并部署 Pages。相关配置位于 `.github/workflows/pages.yml`，构建脚本为 `book_generate.sh`。
 
 ## 代码下载
 
+仓库地址：[SuibeAI/python_book](https://github.com/SuibeAI/python_book)
+
 ```bash
-git clone https://www.modelscope.cn/SuibeAI/python_book.git
+git clone https://github.com/SuibeAI/python_book.git
 cd python_book
 ```
