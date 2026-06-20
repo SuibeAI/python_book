@@ -119,7 +119,7 @@ https://suibeai.github.io/python_book/
 如果需要在本地构建 Jupyter Lite 版本：
 
 ```bash
-python3 -m pip install -U jupyterlite jupyterlite-pyodide-kernel
+python3 -m pip install -U jupyterlite jupyterlite-pyodide-kernel jupyter-server
 python3 -m jupyterlite build . \
   --contents books \
   --output-dir _build/jupyter-lite
