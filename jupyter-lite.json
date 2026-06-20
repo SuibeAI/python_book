@@ -1,7 +1,7 @@
 {
   "jupyter-lite-schema-version": 1,
   "jupyter-config-data": {
-    "appUrl": "/tree",
+    "appUrl": "./tree",
     "exposeAppInBrowser": true
   },
   "jupyter-lite-data": {
