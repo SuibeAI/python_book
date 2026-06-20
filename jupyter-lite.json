@@ -1,14 +1,8 @@
 {
   "jupyter-lite-schema-version": 1,
   "jupyter-config-data": {
-    "exposeAppInBrowser": true,
-    "settings": {
-      "classic": {
-        "tree": {
-          "navigateToRoot": true
-        }
-      }
-    }
+    "appUrl": "/tree",
+    "exposeAppInBrowser": true
   },
   "jupyter-lite-data": {
     "contents": []
