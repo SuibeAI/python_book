@@ -120,7 +120,9 @@ https://suibeai.github.io/python_book/
 
 ```bash
 python3 -m pip install -U jupyterlite jupyterlite-pyodide-kernel
-jupyter_lite build . --output-dir _build/jupyter-lite
+python3 -m jupyterlite build . \
+  --contents books \
+  --output-dir _build/jupyter-lite
 ```
 
 然后在 `_build/jupyter-lite/index.html` 中打开。
